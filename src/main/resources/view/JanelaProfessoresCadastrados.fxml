@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControleProfessoresCadastrados">
+   <children>
+      <Label layoutX="7.0" layoutY="1.0" prefHeight="27.0" prefWidth="175.0" text="Professores Cadastrados:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="professores" layoutY="30.0" prefHeight="343.0" prefWidth="599.0">
+         <columns>
+            <TableColumn fx:id="idProfessor" prefWidth="97.0" text="ID Professor:" />
+            <TableColumn fx:id="nomeProfessor" prefWidth="104.0" text="Nome:" />
+            <TableColumn fx:id="sobrenomeProfessor" prefWidth="138.0" text="Sobrenome:" />
+            <TableColumn fx:id="dataNascimentoProfessor" prefWidth="135.0" text="Data Nascimento:" />
+            <TableColumn fx:id="cref" prefWidth="124.0" text="CREF:" />
+         </columns>
+      </TableView>
+      <ScrollBar layoutX="598.0" layoutY="30.0" orientation="VERTICAL" prefHeight="343.0" prefWidth="24.0" />
+   </children>
+</AnchorPane>
