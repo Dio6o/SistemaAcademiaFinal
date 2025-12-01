@@ -9,11 +9,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControleTelaLogin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControleTelaLogin">
    <children>
-      <Button layoutX="84.0" layoutY="349.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="237.0" text="Button" />
-      <TextField fx:id="caixaTextoUsuario" layoutX="84.0" layoutY="249.0" prefHeight="25.0" prefWidth="237.0" />
+      <Button fx:id="loginBotao" layoutX="84.0" layoutY="349.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="237.0" text="Login" />
+      <TextField fx:id="caixaUsuario" layoutX="84.0" layoutY="249.0" prefHeight="25.0" prefWidth="237.0" />
       <Label layoutX="84.0" layoutY="229.0" text="Usuário:">
          <font>
             <Font size="14.0" />
@@ -24,7 +23,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <PasswordField fx:id="caixaTextoSenha" layoutX="84.0" layoutY="300.0" prefHeight="25.0" prefWidth="237.0" text="fdfndnfso" />
+      <PasswordField fx:id="caixaSenha" layoutX="84.0" layoutY="300.0" prefHeight="25.0" prefWidth="237.0" />
       <Label alignment="CENTER" layoutX="61.0" layoutY="27.0" text="Bem-Vindo, faça seu login!">
          <font>
             <Font size="24.0" />

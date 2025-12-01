@@ -54,9 +54,47 @@ public class ControleTelaPrincipal{
         }
     }
 
+    public void consultarExercicios(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaExerciciosCadastrados.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Exercícios Cadastrados");
+            stage.show();
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public void cadastrarAluno(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaCadastroAluno.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Cadastro De Novo Aluno");
+            stage.show();
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void cadastrarProfessor(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaCadastroProfessor.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Cadastro De Novo Professor");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 }

@@ -39,6 +39,11 @@ public class ProfessorBO {
         return professorDAO.procurarPorNome(nome);
     }
 
+    public Professor procurarPorCpf(String cpf) {
+        ProfessorDAO professorDAO = new ProfessorDAO();
+        return professorDAO.procurarPorCpf(cpf);
+    }
+
     public List<Professor> pesquisarTodos() {
         ProfessorDAO professorDAO = new ProfessorDAO();
         return professorDAO.pesquisarTodos();

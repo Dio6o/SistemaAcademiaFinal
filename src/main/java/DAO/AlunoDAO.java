@@ -15,12 +15,15 @@ public class AlunoDAO {
     public boolean inserir(Aluno aluno) {
         try {
             Connection conn = Conexao.conectar();
-            String sql = "INSERT INTO " + NOMEDATABELA + " (nome, sobrenome, cpf, data_nascimento) VALUES (?, ?, ?, ?);";
+            String sql = "INSERT INTO " + NOMEDATABELA + " (nome, sobrenome, cpf, data_nascimento, status_plano, plano)" + "VALUES (?, ?, ?, ?, ?, ?);";
+
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
             ps.setString(2, aluno.getSobrenome());
             ps.setString(3, aluno.getCpf());
             ps.setString(4, aluno.getDataNascimento());
+            ps.setBoolean(5, aluno.getStatus());
+            ps.setInt(6, aluno.getPlano());
             ps.executeUpdate();
             ps.close();
             conn.close();

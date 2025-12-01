@@ -15,13 +15,14 @@ public class ProfessorDAO {
     public boolean inserir(Professor professor) {
         try {
             Connection conn = Conexao.conectar();
-            String sql = "INSERT INTO " + NOMEDATABELA + " (nome, sobrenome, cpf, data_nascimento, cref) VALUES (?, ?, ?, ?, ?) ;";
+            String sql = "INSERT INTO " + NOMEDATABELA + " (nome, sobrenome, cpf, data_nascimento, cref, senha) VALUES (?, ?, ?, ?, ?, ?) ;";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, professor.getNome());
             ps.setString(2, professor.getSobrenome());
             ps.setString(3, professor.getCpf());
             ps.setString(4, professor.getDataNascimento());
             ps.setString(5, professor.getCref());
+            ps.setInt(6, professor.getSenha());
             ps.executeUpdate();
             ps.close();
             conn.close();
@@ -125,6 +126,36 @@ public class ProfessorDAO {
                 rs.close();
                 conn.close();
                 return obj;
+            } else {
+                ps.close();
+                rs.close();
+                conn.close();
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public Professor procurarPorCpf(String cpf) {
+        try {
+            Connection conn = Conexao.conectar();
+            String sql = "SELECT * FROM " + NOMEDATABELA + " WHERE cpf = ?;";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, cpf);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Professor obj = new Professor();
+                obj.setId(rs.getInt(1));
+                obj.setNome(rs.getString(2));
+                obj.setSobrenome(rs.getString(3));
+                obj.setCpf(rs.getString(4));
+                obj.setSenha(rs.getInt(7));
+                ps.close();
+                rs.close();
+                conn.close();
+                return obj;
+
             } else {
                 ps.close();
                 rs.close();

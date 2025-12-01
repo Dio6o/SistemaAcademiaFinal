@@ -27,19 +27,21 @@
                   </MenuItem>
               <MenuItem fx:id="professoresCadastrados" mnemonicParsing="false" onAction="#consultarProfessores" text="Professores Cadastrados" />
                   <MenuItem fx:id="treinosAluno" mnemonicParsing="false" onAction="#treinosAluno" text="Treinos do Aluno" />
-                  <MenuItem mnemonicParsing="false" text="Exercicios Cadastrados" />
+                  <MenuItem fx:id="exerciciosCadastrados" mnemonicParsing="false" onAction="#consultarExercicios" text="Exercicios Cadastrados" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" text="Fechar" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Cadastros">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="cadastroAluno" mnemonicParsing="false" onAction="#cadastrarAluno" text="Cadastro Aluno" />
+                  <MenuItem fx:id="cadastroProfessor" mnemonicParsing="false" onAction="#cadastrarProfessor" text="Cadastro Professor" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Catraca">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="iniciarCatraca" mnemonicParsing="false" text="Abrir" />
+                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
             </items>
           </Menu>
         </menus>
