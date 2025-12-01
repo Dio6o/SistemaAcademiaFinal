@@ -1,5 +1,8 @@
 package DTO;
 
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
+
 import java.sql.Date;
 
 public class Aluno extends Pessoa {
@@ -14,9 +17,18 @@ public class Aluno extends Pessoa {
         setId(id);
     }
 
+    public Aluno(String nome){
+        setNome(nome);
+    }
+
     public Aluno(int id, String nome){
         setId(id);
         setNome(nome);
+    }
+
+    public Aluno(String nome, String sobrenome){
+        setNome(nome);
+        setSobrenome(sobrenome);
     }
 
     public Aluno(String nome, String sobreNome, String cpf, String dataNascimento){
@@ -32,6 +44,16 @@ public class Aluno extends Pessoa {
         setSobrenome(sobreNome);
         setCpf(cpf);
         setDataNascimento(dataNascimento);
+    }
+
+    public Aluno(int id, String nome, String sobreNome, String cpf, String dataNascimento, boolean status, int plano){
+        setId(id);
+        setNome(nome);
+        setSobrenome(sobreNome);
+        setCpf(cpf);
+        setDataNascimento(dataNascimento);
+        setStatus(status);
+        setPlano(plano);
     }
 
     public int getPlano() {

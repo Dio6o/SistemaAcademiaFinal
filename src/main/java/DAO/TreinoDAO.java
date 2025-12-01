@@ -74,11 +74,17 @@ public class TreinoDAO {
     public boolean excluir(Treino treino) {
         try {
             Connection conn = Conexao.conectar();
+
+            String sql1 = "DELETE FROM exercicios_treino WHERE treino_id = ?";
+            PreparedStatement ps1 = conn.prepareStatement(sql1);
+            ps1.setInt(1, treino.getTreino_id());
+            ps1.executeUpdate();
+
             String sql = "DELETE FROM " + NOMEDATABELA + " WHERE treino_id = ?;";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, treino.getTreino_id());
             ps.executeUpdate();
-            ps.close();
+
             conn.close();
             return true;
         } catch (Exception e) {
@@ -146,11 +152,12 @@ public class TreinoDAO {
 
 
     public List<Treino> montarLista(ResultSet rs) {
-        List<Treino> listObj = new ArrayList<Treino>();
+        List<Treino> listObj = new ArrayList();
         try {
             while (rs.next()) {
                 Treino obj = new Treino();
                 obj.setTreino_id(rs.getInt(1));
+                obj.setAluno_id(rs.getInt(2));
                 obj.setNome_treino(rs.getString(4));
                 obj.setProfessor_id(rs.getInt(3));
                 listObj.add(obj);

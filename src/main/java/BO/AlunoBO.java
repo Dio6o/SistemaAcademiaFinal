@@ -29,9 +29,9 @@ public class AlunoBO {
         return alunoDAO.excluir(aluno);
     }
 
-    public Aluno procurarPorId(Aluno aluno) {
+    public Aluno procurarPorId(int id) {
         AlunoDAO alunoDAO = new AlunoDAO();
-        return alunoDAO.procurarPorId(aluno);
+        return alunoDAO.procurarPorId(id);
     }
 
     public Aluno procurarPorNome(String nome) {

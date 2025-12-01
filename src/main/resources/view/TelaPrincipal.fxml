@@ -3,20 +3,19 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="800.0" minWidth="1280.0" prefHeight="635.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControleTelaPrincipal">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="704.0" minWidth="1187.0" prefHeight="704.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControleTelaPrincipal">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="559.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imgs/toguro.png" />
          </image>
       </ImageView>
-      <MenuBar fx:id="barraMenu" layoutX="-3.0" layoutY="2.0" prefHeight="25.0" prefWidth="1280.0">
+      <MenuBar fx:id="barraMenu" layoutX="-3.0" layoutY="2.0" prefHeight="25.0" prefWidth="1368.0">
         <menus>
           <Menu mnemonicParsing="false" text="Consultas">
             <items>
@@ -28,22 +27,35 @@
               <MenuItem fx:id="professoresCadastrados" mnemonicParsing="false" onAction="#consultarProfessores" text="Professores Cadastrados" />
                   <MenuItem fx:id="treinosAluno" mnemonicParsing="false" onAction="#treinosAluno" text="Treinos do Aluno" />
                   <MenuItem fx:id="exerciciosCadastrados" mnemonicParsing="false" onAction="#consultarExercicios" text="Exercicios Cadastrados" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Fechar" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Cadastros">
             <items>
               <MenuItem fx:id="cadastroAluno" mnemonicParsing="false" onAction="#cadastrarAluno" text="Cadastro Aluno" />
+                  <MenuItem fx:id="cadastroTreino" mnemonicParsing="false" onAction="#cadastrarTreino" text="Cadastro Treino" />
                   <MenuItem fx:id="cadastroProfessor" mnemonicParsing="false" onAction="#cadastrarProfessor" text="Cadastro Professor" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Catraca">
             <items>
-              <MenuItem fx:id="iniciarCatraca" mnemonicParsing="false" text="Abrir" />
-                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              <MenuItem fx:id="iniciarCatraca" mnemonicParsing="false" onAction="#iniciarCatraca" text="Iniciar" />
+                <MenuItem fx:id="enviarCodigo" mnemonicParsing="false" onAction="#enviarCodigo" text="Enviar Código QR" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Remover">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#excluirAluno" text="Remover Aluno" />
+                <MenuItem mnemonicParsing="false" onAction="#excluirProfessor" text="Remover Professor" />
+                  <MenuItem mnemonicParsing="false" onAction="#excluirTreino" text="Remover Treino" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Atualizações">
+              <items>
+                  <MenuItem fx:id="atualizarAluno" mnemonicParsing="false" onAction="#atualizarAluno" text="Atualizar Cadastro Aluno" />
+                  <MenuItem mnemonicParsing="false" text="Atualizar Cadastro Professor" />
+                  <MenuItem mnemonicParsing="false" text="Atualizar Treino" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </children>

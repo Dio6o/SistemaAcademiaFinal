@@ -74,8 +74,7 @@ public class ControleTreinosAluno implements Initializable {
 
                 Exercicio exercicio = exercicioBO.procurarPorId(new Exercicio(exercicioTreino.getExercicio_id()));
 
-                String texto = "Exercício: " + exercicio.getNome() + ", Sets: " +
-                        exercicioTreino.getSets() + ", Repetições: " + exercicioTreino.getRepeticeos();
+                String texto = "Exercício: " + exercicio.getNome();
 
                 TreeItem<TreinoNode> exNode = new TreeItem<>(new TreinoNode(texto));
 
@@ -87,9 +86,5 @@ public class ControleTreinosAluno implements Initializable {
 
         tabelaTreinos.setRoot(root);
         tabelaTreinos.setShowRoot(true);
-    }
-    @FXML
-    public void itemEscolhido() {
-        System.out.println("aaaaaaaaaaaaaaaa");
     }
 }

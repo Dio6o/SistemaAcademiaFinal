@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
 public class ControleTelaPrincipal{
 
     @FXML
@@ -89,6 +88,104 @@ public class ControleTelaPrincipal{
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Cadastro De Novo Professor");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void cadastrarTreino(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaCadastroTreino.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Cadastro De Novo Treino");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void iniciarCatraca(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaCatraca.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Catraca");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void enviarCodigo(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaEnviarCodigo.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Enviar código de Acesso");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void atualizarAluno(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaAlterarAluno.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Atualizar cadastro do aluno");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void excluirAluno(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaExcluirAluno.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Excluir Aluno");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void excluirProfessor(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaExcluirProfessores.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Excluir Professor");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void excluirTreino(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaExcluirTreino.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Excluir Treino");
             stage.show();
 
         } catch (IOException e) {

@@ -58,7 +58,7 @@ public class AlunoDAO {
         try {
             Connection conn = Conexao.conectar();
             String sql = "UPDATE " + NOMEDATABELA + " SET nome = ?, sobreNome = ?, cpf = ?, data_nascimento = ?, " +
-                    "status_plano = ?, plano = ?, ultimo_pagamento = ? WHERE aluno_id = ?;";
+                    "status_plano = ?, plano = ? WHERE aluno_id = ?;";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
             ps.setString(2, aluno.getSobrenome());
@@ -66,8 +66,7 @@ public class AlunoDAO {
             ps.setString(4, aluno.getDataNascimento());
             ps.setBoolean(5, aluno.getStatus());
             ps.setInt(6, aluno.getPlano());
-            ps.setDate(7, aluno.getUltimoPagamento());
-            ps.setInt(8, aluno.getId());
+            ps.setInt(7, aluno.getId());
             ps.executeUpdate();
             ps.close();
             conn.close();
@@ -93,18 +92,21 @@ public class AlunoDAO {
             return false;
         }
     }
-    public Aluno procurarPorId(Aluno aluno) {
+    public Aluno procurarPorId(int id) {
         try {
             Connection conn = Conexao.conectar();
             String sql = "SELECT * FROM " + NOMEDATABELA + " WHERE aluno_id = ?;";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, aluno.getId());
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Aluno obj = new Aluno();
                 obj.setId(rs.getInt(1));
                 obj.setNome(rs.getString(2));
                 obj.setSobrenome(rs.getString(3));
+                obj.setCpf(rs.getString(4));
+                obj.setDataNascimento(rs.getString(5));
+                obj.setStatus(rs.getBoolean(6));
                 ps.close();
                 rs.close();
                 conn.close();
@@ -120,6 +122,7 @@ public class AlunoDAO {
             return null;
         }
     }
+
     public Aluno procurarPorNome(String nome) {
         try {
             Connection conn = Conexao.conectar();
