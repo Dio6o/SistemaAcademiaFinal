@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class ControleTelaPrincipal{
 
+    String css = this.getClass().getResource("/css/style.css").toExternalForm();
+
     @FXML
     public void consultarAlunos(){
         try {
@@ -16,6 +18,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Alunos cadastrados");
             stage.show();
 
@@ -31,6 +34,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Professores Cadastrados");
             stage.show();
 
@@ -45,6 +49,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Treinos Cadastrados");
             stage.show();
 
@@ -59,6 +64,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Exercícios Cadastrados");
             stage.show();
 
@@ -73,6 +79,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Cadastro De Novo Aluno");
             stage.show();
 
@@ -87,6 +94,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Cadastro De Novo Professor");
             stage.show();
 
@@ -101,6 +109,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Cadastro De Novo Treino");
             stage.show();
 
@@ -115,6 +124,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Catraca");
             stage.show();
 
@@ -129,6 +139,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Enviar código de Acesso");
             stage.show();
 
@@ -143,6 +154,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Atualizar cadastro do aluno");
             stage.show();
 
@@ -157,6 +169,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Excluir Aluno");
             stage.show();
 
@@ -171,6 +184,7 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Excluir Professor");
             stage.show();
 
@@ -185,7 +199,23 @@ public class ControleTelaPrincipal{
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            scene.getStylesheets().add(css);
             stage.setTitle("Excluir Treino");
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void atualizarProfessor(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/JanelaAlterarProfessor.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            scene.getStylesheets().add(css);
+            stage.setTitle("Atualizar Cadastro Professor");
             stage.show();
 
         } catch (IOException e) {

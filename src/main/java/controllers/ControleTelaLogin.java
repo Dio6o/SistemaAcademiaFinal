@@ -50,6 +50,7 @@ public class ControleTelaLogin {
 
                     stage.setScene(new Scene(root));
                     stage.setTitle("Sistema Academia");
+                    stage.setMaximized(true);
                     stage.show();
 
                 } else {

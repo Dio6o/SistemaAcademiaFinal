@@ -15,7 +15,8 @@ public class ProfessorDAO {
     public boolean inserir(Professor professor) {
         try {
             Connection conn = Conexao.conectar();
-            String sql = "INSERT INTO " + NOMEDATABELA + " (nome, sobrenome, cpf, data_nascimento, cref, senha) VALUES (?, ?, ?, ?, ?, ?) ;";
+            String sql = "INSERT INTO " + NOMEDATABELA + " (nome, sobrenome, cpf, data_nascimento, cref, senha) " +
+                    "VALUES (?, ?, ?, ?, ?, ?) ;";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, professor.getNome());
             ps.setString(2, professor.getSobrenome());
@@ -56,10 +57,16 @@ public class ProfessorDAO {
     public boolean alterar(Professor professor) {
         try {
             Connection conn = Conexao.conectar();
-            String sql = "UPDATE " + NOMEDATABELA + " SET nome = ? WHERE professor_id = ?;";
+            String sql = "UPDATE " + NOMEDATABELA + " SET nome = ?, sobreNome = ?, cpf = ?, data_nascimento = ?, cref = ?, " +
+                    "senha = ? WHERE professor_id = ?;";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, professor.getNome());
-            ps.setInt(2, professor.getId());
+            ps.setString(2, professor.getSobrenome());
+            ps.setString(3, professor.getCpf());
+            ps.setString(4, professor.getDataNascimento());
+            ps.setString(5, professor.getCref());
+            ps.setInt(6, professor.getSenha());
+            ps.setInt(7, professor.getId());
             ps.executeUpdate();
             ps.close();
             conn.close();
@@ -189,8 +196,10 @@ public class ProfessorDAO {
                 obj.setId(rs.getInt(1));
                 obj.setNome(rs.getString(2));
                 obj.setSobrenome(rs.getString(3));
+                obj.setCpf(rs.getString(4));
                 obj.setDataNascimento(rs.getString(5));
                 obj.setCref(rs.getString(6));
+                obj.setSenha(rs.getInt(7));
                 listObj.add(obj);
             }
             return listObj;

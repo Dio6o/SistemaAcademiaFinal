@@ -36,6 +36,16 @@ public class ControleCatraca implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         iniciarWebcam();
+
+        catraca.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                newScene.windowProperty().addListener((obs2, oldWin, newWin) -> {
+                    if (newWin != null) {
+                        newWin.setOnHidden(e -> fecharWebcam());
+                    }
+                });
+            }
+        });
     }
 
     public void iniciarWebcam() {
@@ -125,6 +135,15 @@ public class ControleCatraca implements Initializable {
         }
         catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void fecharWebcam() {
+        running = false;
+
+        if (webcam != null && webcam.isOpen()) {
+            webcam.close();
+
         }
     }
 

@@ -29,6 +29,7 @@ public class Professor extends Pessoa {
         setCref(cref);
     }
 
+
     public String getCref() {
         return cref;
     }
